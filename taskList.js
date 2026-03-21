@@ -23,3 +23,14 @@ function addTask(){
     displayTasks();
 }
 
+function removeTask(i){
+
+    tasks.splice(i, 1);
+    saveTasks();
+    displayTasks();
+}
+
+function saveTasks(){
+
+    let saved = localStorage.setItem("tasks", JSON.stringify(tasks));
+}
