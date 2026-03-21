@@ -42,15 +42,34 @@
 
         /* --- Calendar UI Styles --- */
         .container {
-            align-items: center;
+            align-items: flex-start;
             display: flex;
             justify-content: center;
+            gap: 30px;
             margin: 40px auto;
-            max-width: 600px;
-            width: 100%;
+            max-width: 950px;
+            width:90%;
+        
         }
-
+        
+            #box1{
+                flex: 0 0 140px;
+            }
+            .styled-image {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin: 0;
+            }
+            .large-border{
+                border: 4px solid #1b6b6f;
+                padding: 8px;
+                background: white;
+            }
+        
         .calendar {
+            flex: 0 0 500px;
+            width: 500px;
             background: #955200;
             border-radius: 4px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
@@ -58,7 +77,6 @@
             perspective: 1000px;
             transition: transform .9s;
             transform-style: preserve-3d;
-            width: 100%;
             position: relative; /* Added to keep front/back contained */
         }
 
@@ -238,4 +256,10 @@
         .calendar.flip {
             transform: rotateY(180deg);
         }
+        .styled-image {
+        width: 30%;
+        height: auto; /* Maintains aspect ratio */
+        margin: 10px;
+        }
+        
   

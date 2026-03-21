@@ -32,17 +32,5 @@ function removeTask(i){
 
 function saveTasks(){
 
-    let saved = localStorage.setItem("tasks", JSON.stringify(tasks)); 
-}
-
-// Function to Load tasks
-function loadTasks() {
-  let saved = localStorage.getItem("tasks");
-  if (saved !== null) {
-    tasks = JSON.parse(saved);
-  }
-}
-
-// Load and display tasks when page loads
-loadTasks();
-displayTasks()
+    let saved = localStorage.setItem("tasks", JSON.stringify(tasks));
+} 
