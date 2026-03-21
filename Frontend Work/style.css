@@ -18,7 +18,7 @@
         }
 
         body {
-            background: #dfebed;
+            background: #03c8ff;
             text-align: center;
         }
 
@@ -32,7 +32,7 @@
         }
 
         .schedule-card {
-            background-color: rgb(247, 255, 8);
+            background-color: rgb(253, 253, 253);
             padding: 15px;
             border-radius: 10px;
             width: 300px;
@@ -51,7 +51,7 @@
         }
 
         .calendar {
-            background: #e524ec;
+            background: #955200;
             border-radius: 4px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
             height: 501px;
@@ -76,7 +76,7 @@
         /* Front - Calendar */
         .front {
             transform: rotateY(0deg);
-            background: #fa04f2;
+            background: #945901;
             z-index: 2;
         }
 
