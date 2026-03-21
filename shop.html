@@ -4,15 +4,15 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>Ghost</title>
+	<title>Prawn Shop</title>
 	<style>
-		* {
+		body {
 			background: #0f0f0f;
 			margin: 0;
 			padding: 0;
 		}
 		canvas {
-			background: #333333;
+			background: #2806e7;
 			margin: 0 auto;
 			display: block;
 		}
@@ -25,37 +25,41 @@
 	<script>
 		var canvas = document.getElementById("board");
 		var ctx = canvas.getContext("2d");
+		let playerMoney = setCurrencyCookie(walletAmount);
 
-		var ghost = {
-			x: canvas.width / 2,
-			y: canvas.height / 2,
-			dx: -2,
-			dy: 2,
-			h: 51,
-			w: 41,
-			image: new Image(),
-			src: "src/ghost.png",
-			draw: function() {
-				this.image.src = this.src;
-				ctx.beginPath();
-				ctx.drawImage(this.image, this.x, this.y);
-				ctx.closePath();
-			},
-			collision: function() {
-				if (this.x+this.w >= canvas.width ||
-					this.x+this.dx <= 0) {
-					this.dx = -this.dx;
-				}
-				if (this.y+this.h >= canvas.height ||
-					this.y+this.dy <= 0) {
-					this.dy = -this.dy;
-				}
-			},
-			move: function() {
-				this.x += this.dx;
-				this.y += this.dy;
-			}
-		};
+function shopping(n)
+{
+    playerMoney.subtractCurrency(shopObj[n].getitemCost);
+    let playerMoney = getCurrencyCookie();
+    updateDisplay();
+    
+}
+function addMoney(bucks)
+{
+    playerMoney.addCurrency(bucks)
+}
+
+//list of items in the shop
+var shopObj = [
+    {
+        itemCost : 100,
+        itemName : 'Top Hat'
+    },      
+    
+	{
+        itemCost : 10,
+        itemName : 'milk'
+    },
+    
+	{
+        itemCost : 5,
+        itemName : 'cat feed'
+    }
+]       
+
+for (i =0 ; i < shopObj.length; i++)
+for (property in shopObj[i]) 
+    alert( 'shop ' + i + " 's property is " + property +  " and it's value is " + shopObj[i][property])
 
 	</script>
 </body>
