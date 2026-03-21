@@ -33,4 +33,4 @@ function removeTask(i){
 function saveTasks(){
 
     let saved = localStorage.setItem("tasks", JSON.stringify(tasks));
-}
+} 
