@@ -335,16 +335,26 @@
             transition: background 0.3s;
         }
 
-        /*counter for pawpoints
-        .pawpoints-counter{
-            background: #1b6b6f;
-            color: #fff;
+        /*counter for pawpoints*/
+        .wallet-display{
+            background: #fff;
+            color: #1b6b6f;
             padding: 10px 15px;
             border-radius: 5px;
             font-weight: 600;
             font-size: 1rem;
             margin-bottom: 20px;
-        }*/
+        }
 
-        
+        .wallet-label{
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .wallet-amount{
+            color: #1b6b6f;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
   
