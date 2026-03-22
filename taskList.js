@@ -11,7 +11,7 @@ function checkUserStatus() {
     const taskApp = document.getElementById("task-app");
 
     if (!mainGoal) {
-        catMessage.innerText = "Meowdy! I'm your mascot. What is your main goal, and when do you want to achieve it?";
+        catMessage.innerText = "Meowdy! I'm your kitty companion. What is your main goal, and when do you want to achieve it?";
         if(goalForm) goalForm.classList.remove("hidden");
         if(taskApp) taskApp.classList.add("hidden"); 
     } else {
