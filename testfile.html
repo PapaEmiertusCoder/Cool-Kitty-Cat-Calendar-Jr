@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Quotes</title>
+    <style>
+        /* Basic styling to make it look like a character speaking */
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .speech-bubble {
+            display: inline-block;
+            padding: 20px;
+            background: #eef2f3;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            max-width: 300px;
+        }
+        .character {
+            font-size: 80px; /* Big cat emoji! */
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="speech-bubble">
+        "<span id="quote">...</span>"
+    </div>
+
+    <div class="character">😸</div>
+
+    <div>
+        <button onclick="speakRandomQuote()">Meow!</button>
+    </div>
+
+    <script src="catQuotes.js"></script>
+
+</body>
+</html>

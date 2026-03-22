@@ -30,7 +30,30 @@ function removeTask(i){
     displayTasks();
 }
 
-function saveTasks(){
 
-    let saved = localStorage.setItem("tasks", JSON.stringify(tasks));
-} 
+
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks)); 
+}
+
+function loadTasks() {
+    let saved = localStorage.getItem("tasks");
+    if (saved !== null) {
+        let parsedTasks = JSON.parse(saved);
+        
+        // Convert any old string tasks to the new object format so it doesn't break
+        tasks = parsedTasks.map(task => {
+            if (typeof task === 'string') {
+                return { text: task, completed: false };
+            }
+            return task;
+        });
+    }
+}
+
+
+loadTasks();
+checkDailyReset(); 
+displayTasks();
+checkUserStatus();
+
