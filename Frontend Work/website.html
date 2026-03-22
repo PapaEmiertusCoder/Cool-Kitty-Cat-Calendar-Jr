@@ -21,9 +21,12 @@
         </div>
  </div>
     <div class="container">
-    <div id="box1">
+    <div id="box1" class ="cat-wrapper">
         <img class="style-image" src="/Picture/CUTE CAT.png" alt="Cute cat">
+    
+        <img id="the-top-hat" src="/Picture/tophat.png" alt="Top Hat" class="hidden-hat">
     </div>
+
         <div class="calendar">
             <div class="front">
                 <div class="current-date">
@@ -135,6 +138,7 @@
         <div class="shop-header">
         <h3>Prawn Shop</h3>
         </div>
+
         <div class="shop-items">
             <div class="shop-item">
                 <h4>Top Hat</h4>
@@ -152,6 +156,15 @@
                 <button onclick="shopping(2)">Buy</button>
             </div>
 
+</div>
+
+<div class="pawpoints-counter-static">
+    <div class="pawpoints-header">
+        <h3>Paw Points</h3>
+    </div>
+    <div class="pawpoints-content">
+        <span id="pawpoints-display">100</span>
+    </div>
 </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -201,9 +214,56 @@
     </script>
 
     <script>
-        let pawpoints = setCurrencyCookie(100);
 
         
+// set the cookie value
+    function setCurrencyCookie(value) {
+        // Expires in 7 days
+        let date = new Date();
+        date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
+        document.cookie = "myCurrency=" + value + "; expires=" + date.toUTCString() + "; path=/";
+    }
+//get the cookie value
+    function getCurrencyCookie(){
+        let name = "myCurrency=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i < ca.length; i++){
+            let c = ca[i];
+            while (c.charAt(0) === ' '){
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0){
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+//add more money to the cookie
+    function addCurrency(amount){
+        let currentCurrency = getCurrencyCookie("currency")
+        setCurrencyCookie(currentCurrency + amount)
+        updateDisplay();
+    }
+//subtract money from cookie
+    function subtractCurrency(amount){
+        let currentCurrency = getCurrencyCookie("currency")
+        setCurrencyCookie(currentCurrency - amount);
+        updateDisplay();
+    }
+//update the display of the currency
+    function updateDisplay(){
+        document.getElementById("pawpoints-display").innerHTML = getCurrencyCookie("currency");
+    }
+
+    </script>
+
+    <script>
+        if(getCurrencyCookie() == "") {
+            setCurrencyCookie(100);
+        }
+
 
         //list of items in the shop
 var shopObj = [
@@ -224,8 +284,21 @@ var shopObj = [
 //the function to buy stuff from the Prawn Shop
     function shopping(n)
     {
+        alert("You clicked the buy button for " + n + "!");
         let item = shopObj[n];
-        let bought = item.subtractCurrency(item.itemCost);
+        currentBalance = Number(getCurrencyCookie());
+        if(currentBalance >= item.itemCost)
+        {   
+            subtractCurrency(item.itemCost);
+            document.getElementById("pawpoints-display").innerHTML = getCurrencyCookie();
+            alert("You bought " + item.itemName + " for " + item.itemCost + " paw points! You have " + getCurrencyCookie() + " paw points left.");
+            if(n == 0){
+                document.getElementById("the-top-hat").classList.remove("hidden-hat");
+            }
+        }
+        else{
+            alert("You don't have enough paw points to buy" + item.itemName + "!" + "Do your daily tasks!");
+        }
         return getCurrencyCookie();
     }
 

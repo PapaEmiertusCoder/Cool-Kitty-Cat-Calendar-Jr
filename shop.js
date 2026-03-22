@@ -1,6 +1,8 @@
 //list of items in the shop
 
-let pawpoints = setCurrencyCookie(100);
+    if(getCurrencyCookie() == "") {
+            setCurrencyCookie(100);
+    }
 
 var shopObj = [
     {
@@ -19,11 +21,24 @@ var shopObj = [
 
 //the function to buy stuff from the Prawn Shop
 function shopping(n)
-{
-    let item = shopObj[n];
-    let bought = item.subtractCurrency(item.itemCost);
-    return getCurrencyCookie();
-}
+    {
+        alert("You clicked the buy button for " + n + "!");
+        let item = shopObj[n];
+        currentBalance = Number(getCurrencyCookie());
+        if(currentBalance >= item.itemCost)
+        {   
+            subtractCurrency(item.itemCost);
+            document.getElementById("pawpoints-display").innerHTML = getCurrencyCookie();
+            alert("You bought " + item.itemName + " for " + item.itemCost + " paw points! You have " + getCurrencyCookie() + " paw points left.");
+            if(n == 0){
+                document.getElementById("the-top-hat").classList.remove("hidden-hat");
+            }
+        }
+        else{
+            alert("You don't have enough paw points to buy" + item.itemName + "!" + "Do your daily tasks!");
+        }
+        return getCurrencyCookie();
+    }
 
 
 for (i =0 ; i < shopObj.length; i++)
