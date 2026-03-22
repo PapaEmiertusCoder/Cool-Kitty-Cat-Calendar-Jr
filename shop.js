@@ -1,16 +1,18 @@
-
 //list of items in the shop
+
+let pawpoints = setCurrencyCookie(100);
+
 var shopObj = [
     {
-        itemCost : setCurrencyCookie(100),
+        itemCost : 100,
         itemName : 'Top Hat'
     },      
     {
-        itemCost : setCurrencyCookie(10),
+        itemCost : 10,
         itemName : 'milk'
     },
     {
-        itemCost : setCurrencyCookie(5),
+        itemCost : 5,
         itemName : 'cat feed'
     }
 ] 
