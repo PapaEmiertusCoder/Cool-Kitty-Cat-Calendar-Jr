@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,26 @@
 
         <div class="schedule-card">
             <h2>Morning Focus</h2>
-            <p><strong>9:00 AM:</strong> Complete the Hackathon </p>
+            <p><strong>9:00 AM:</strong> What is your main goal, and when do you want to achieve it? </p><br>
+                <label> Goal: 
+                    <input type="text" name="goal"> </label>
+                <br><br>
+                <label> Target Date: </label>
+                <input type="date" id="goalDateInput">
+                <br><br>
+                <button onclick="setGoal()">Set Goal</button>
+        </div>
+
+        <div class="schedule-card">
+            <h2>Daily Meow-tivation</h2>
+            Click the button below to get inspired!
+            <button onclick="speakRandomQuote()">Pounce on a Quote</button>
+        </div>
+        
+        <div class="schedule-card">
+            <h2>Daily Meow-tivation</h2>
+            <p id="quote">Click the button below to get inspired!</p>
+            <button onclick="speakRandomQuote()">Pounce on a Quote</button>
         </div>
  </div>
     <div class="container">

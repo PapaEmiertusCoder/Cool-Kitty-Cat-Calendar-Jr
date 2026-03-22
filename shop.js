@@ -1,9 +1,12 @@
-//list of items in the shop
+if(getCurrencyCookie() == "") {
+            setCurrencyCookie(100);
+        }
 
     if(getCurrencyCookie() == "") {
             setCurrencyCookie(100);
     }
 
+        //list of items in the shop
 var shopObj = [
     {
         itemCost : 100,
@@ -41,6 +44,6 @@ function shopping(n)
     }
 
 
-for (i =0 ; i < shopObj.length; i++)
-for (property in shopObj[i]) 
-    alert( 'shop ' + i + " 's property is " + property +  " and it's value is " + shopObj[i][property])
+        for (i =0 ; i < shopObj.length; i++)
+        for (property in shopObj[i]) 
+        alert( 'shop ' + i + " 's property is " + property +  " and it's value is " + shopObj[i][property])
