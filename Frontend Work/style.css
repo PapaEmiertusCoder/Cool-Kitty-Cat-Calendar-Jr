@@ -261,5 +261,90 @@
         height: auto; /* Maintains aspect ratio */
         margin: 10px;
         }
+
+        /*new stuff for the CSS file*/
+        .container2{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .shop-panel-static{
+
+           
+            width: 320px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+            font-family: 'roboto', sans-serif;
+            overflow: hidden;
+        }
+
+        .shop-header{
+            background: #1b6b6f;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .shop-header h3{
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .shop-items{
+            padding: 15px;
+        }
+        /* individual item*/
+        .shop-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .shop-item:last-child{
+            margin-bottom: 0;
+        }
+
+        .item-info{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-name{
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .item-price{
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 3px;
+        }
+
+        /*buy button ui*/
+        .buy-button{
+            background: #1b6b6f;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        /*counter for pawpoints
+        .pawpoints-counter{
+            background: #1b6b6f;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }*/
+
         
   
