@@ -155,6 +155,29 @@
         </div>
     </div>
 
+    <div class="shop-panel-static">
+        <div class="shop-header">
+        <h3>Prawn Shop</h3>
+        </div>
+        <div class="shop-items">
+            <div class="shop-item">
+                <h4>Top Hat</h4>
+                <p>Cost: 100</p>
+                <button onclick="shopping(0)">Buy</button>
+            </div>
+            <div class="shop-item">
+                <h4>Milk</h4>
+                <p>Cost: 10</p>
+                <button onclick="shopping(1)">Buy</button>
+            </div>
+            <div class="shop-item">
+                <h4>Cat Feed</h4>
+                <p>Cost: 5</p>
+                <button onclick="shopping(2)">Buy</button>
+            </div>
+
+</div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script>
@@ -197,7 +220,44 @@
         $(document).ready(function() {
             app.init();
         });
-    </script>  
-    <script src="../catQuotes.js"></script>
+    
+
+    </script>
+
+    <script>
+        let pawpoints = setCurrencyCookie(100);
+
+        
+
+        //list of items in the shop
+var shopObj = [
+    {
+        itemCost : 100,
+        itemName : 'Top Hat'
+    },      
+    {
+        itemCost : 10,
+        itemName : 'milk'
+    },
+    {
+        itemCost : 5,
+        itemName : 'cat feed'
+    }
+] 
+
+//the function to buy stuff from the Prawn Shop
+    function shopping(n)
+    {
+        let item = shopObj[n];
+        let bought = item.subtractCurrency(item.itemCost);
+        return getCurrencyCookie();
+    }
+
+
+        for (i =0 ; i < shopObj.length; i++)
+        for (property in shopObj[i]) 
+        alert( 'shop ' + i + " 's property is " + property +  " and it's value is " + shopObj[i][property])
+    </script>
+   
 </body>
 </html>
