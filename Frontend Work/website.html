@@ -11,13 +11,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<script src="Newtask.js"></script>
     <div class="header-section">
         <h1>Wellness Calendar</h1>
         <p>Welcome to your daily schedule!</p>
+        
+        <div class="header-section">
 
+        <div class="header-card">
         <div class="schedule-card">
-            <h2>Morning Focus</h2>
+            <h2>Morning Focus</h2> 
             <p><strong>9:00 AM:</strong> What is your main goal, and when do you want to achieve it? </p><br>
                 <label> Goal: 
                     <input type="text" name="goal"> </label>
@@ -27,14 +30,27 @@
                 <br><br>
                 <button onclick="setGoal()">Set Goal</button>
         </div>
-        
+    </div>
+
         <div class="schedule-card">
             <h2>Daily Meow-tivation</h2>
-            <p id="quote">Click the button below to get inspired!</p>
+            Click the button below to get inspired!
             <button onclick="speakRandomQuote()">Pounce on a Quote</button>
         </div>
+        <!-- New Task added -->
+        <div class="schedule-card task-card">
+        <h2>Goal List</h2>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="What needs to be done?">
+            <button id="addBtn">Add</button>
+        </div>
+
+        <ul id="checklist"></ul>
     </div>
-    <div class="container">
+
+    
+    <div class="container"> 
     <div id="box1">
         <img class="style-image" src="/Picture/CUTE CAT.png" alt="Cute cat">
     </div>
