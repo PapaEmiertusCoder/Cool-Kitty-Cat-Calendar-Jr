@@ -27,12 +27,6 @@
                 <br><br>
                 <button onclick="setGoal()">Set Goal</button>
         </div>
-
-        <div class="schedule-card">
-            <h2>Daily Meow-tivation</h2>
-            Click the button below to get inspired!
-            <button onclick="speakRandomQuote()">Pounce on a Quote</button>
-        </div>
         
         <div class="schedule-card">
             <h2>Daily Meow-tivation</h2>
@@ -157,7 +151,7 @@
 
     <div class="shop-panel-static">
         <div class="shop-header">
-        <h3>Prawn Shop</h3>
+            <h3>Prawn Shop</h3>
         </div>
         <div class="shop-items">
             <div class="shop-item">
@@ -175,8 +169,10 @@
                 <p>Cost: 5</p>
                 <button onclick="shopping(2)">Buy</button>
             </div>
-
-</div>
+        </div>
+        <div id="currency-container">
+            <p>Currency: <span id="currencyDisplay">0</span></p>
+        </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     

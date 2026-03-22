@@ -398,3 +398,11 @@ margin: 10px;
     font-weight: 700;
 }
 
+#currency-container {
+    padding: 8px 16px;
+}
+
+#currency-container span {
+    font-weight: bold;
+}
+
