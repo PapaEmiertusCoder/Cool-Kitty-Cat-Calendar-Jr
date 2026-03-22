@@ -156,3 +156,4 @@ loadTasks();
 checkDailyReset(); 
 displayTasks();
 checkUserStatus();
+yay;
