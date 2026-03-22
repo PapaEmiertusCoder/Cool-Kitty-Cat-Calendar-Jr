@@ -10,7 +10,7 @@ function displayTasks(){
     document.getElementById("taskList").innerHTML = html;  
 }
 
-//adds a task to the lsit
+//adds a task to the list
 function addTask(){
     let tastInput = document.getElementById("task");
     let text = taskInput.value;
