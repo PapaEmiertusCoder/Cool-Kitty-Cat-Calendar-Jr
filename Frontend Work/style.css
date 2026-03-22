@@ -257,7 +257,7 @@
             transform: rotateY(180deg);
         }
         .styled-image {
-        width: 30%;
+        width: 90%;
         height: auto; /* Maintains aspect ratio */
         margin: 10px;
         }
