@@ -20,6 +20,12 @@
             <h2>Morning Focus</h2>
             <p><strong>9:00 AM:</strong> Complete the Hackathon </p>
         </div>
+        
+        <div class="schedule-card">
+            <h2>Daily Meow-tivation</h2>
+            <p id="quote">Click the button below to get inspired!</p>
+            <button onclick="speakRandomQuote()">Pounce on a Quote</button>
+        </div>
  </div>
     <div class="container">
     <div id="box1">
@@ -174,6 +180,8 @@
         $(document).ready(function() {
             app.init();
         });
-    </script>  
+    </script>
+    
+    <script src="../catQuotes.js"></script>
 </body>
 </html>
