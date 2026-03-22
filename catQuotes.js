@@ -20,4 +20,13 @@ function speakRandomQuote(){
     const randomIndex = Math.floor(Math.random() *quotes.length);
     //gets the element and updates text
     document.getElementById("quote").textContent = quotes[randomIndex];
+
+    // get the cat pic
+    catPic = document.getElementById("box1");
+    rect = catPic.getBoundingClientRect();
+    x = rect.left;
+    y = rect.top;
+
+    // moo dis shi
+    
 }
