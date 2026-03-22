@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +18,41 @@
 
         <div class="schedule-card">
             <h2>Morning Focus</h2>
-            <p><strong>9:00 AM:</strong> Calculus 2 Because fuck you </p>
+            <p><strong>9:00 AM:</strong> What is your main goal, and when do you want to achieve it? </p><br>
+                <label> Goal: 
+                    <input type="text" name="goal"> </label>
+                <br><br>
+                <label> Target Date: </label>
+                <input type="date" id="goalDateInput">
+                <br><br>
+                <button onclick="setGoal()">Set Goal</button>
         </div>
-    </div>
 
+        <div class="schedule-card">
+            <h2>Daily Meow-tivation</h2>
+            Click the button below to get inspired!
+            <button onclick="speakRandomQuote()">Pounce on a Quote</button>
+        </div>
+        
+        <div class="schedule-card">
+            <h2>Daily Meow-tivation</h2>
+            <p id="quote">Click the button below to get inspired!</p>
+            <button onclick="speakRandomQuote()">Pounce on a Quote</button>
+        </div>
+ </div>
     <div class="container">
+    <div id="box1">
+        <img class="style-image" src="/Picture/CUTE CAT.png" alt="Cute cat">
+    </div>
+    <!-- Fixed chat Quote words to be in the Chat bubble -->
+    <div class="chat-bubble">
+         <p id="quote">Click the button above to get inspired!</p>
+    </div>
         <div class="calendar">
             <div class="front">
                 <div class="current-date">
-                    <h1>Friday 15th</h1>
-                    <h1>January 2016</h1> 
+                    <h1>Saturday 21</h1>
+                    <h1>March 2026</h1> 
                 </div>
 
                 <div class="current-month">
@@ -95,19 +121,19 @@
             </div>
 
             <div class="back">
-                <input placeholder="What's the event?">
+                <input placeholder="What's your Goal?">
                 <div class="info">
                     <div class="date">
                         <p class="info-date">
-                            Date: <span>Jan 15th, 2016</span>
+                            Date: <span>Mar 21, 2026</span>
                         </p>
                         <p class="info-time">
-                            Time: <span>6:35 PM</span>
+                            Time: <span>12:00pm</span>
                         </p>
                     </div>
                     <div class="address">
                         <p>
-                            Address: <span>PFT Taylor series </span>
+                            Address: <span>PFT </span>
                         </p>
                     </div>
                     <div class="observations">
@@ -172,5 +198,6 @@
             app.init();
         });
     </script>  
+    <script src="../catQuotes.js"></script>
 </body>
 </html>
