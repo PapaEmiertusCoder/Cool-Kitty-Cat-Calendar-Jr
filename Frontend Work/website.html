@@ -17,12 +17,29 @@
 
         <div class="schedule-card">
             <h2>Morning Focus</h2>
-            <p><strong>9:00 AM:</strong> Complete the Hackathon </p>
+            <p><strong>9:00 AM:</strong> What is your main goal, and when do you want to achieve it? </p><br>
+                <label> Goal: 
+                    <input type="text" name="goal"> </label>
+                <br><br>
+                <label> Target Date: </label>
+                <input type="date" id="goalDateInput">
+                <br><br>
+                <button onclick="setGoal()">Set Goal</button>
+        </div>
+
+        <div class="schedule-card">
+            <h2>Daily Meow-tivation</h2>
+            Click the button below to get inspired!
+            <button onclick="speakRandomQuote()">Pounce on a Quote</button>
         </div>
  </div>
     <div class="container">
     <div id="box1">
         <img class="style-image" src="/Picture/CUTE CAT.png" alt="Cute cat">
+    </div>
+    <!-- Fixed chat Quote words to be in the Chat bubble -->
+    <div class="chat-bubble">
+         <p id="quote">Click the button above to get inspired!</p>
     </div>
         <div class="calendar">
             <div class="front">
@@ -174,5 +191,6 @@
             app.init();
         });
     </script>  
+    <script src="../catQuotes.js"></script>
 </body>
 </html>
