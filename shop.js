@@ -1,27 +1,4 @@
 
-
-let playerMoney = setCurrencyCookie(walletAmount);
-
-function shopping(n)
-{
-    playerMoney.subtractCurrency(shopObj[n].getitemCost);
-    let playerMoney = getCurrencyCookie();
-    updateDisplay();
-    if(shopType =="Cosmetics")
-    {
-
-    }
-
-    if(shopType =="Consumables")
-    {
-        
-    }
-}
-function addMoney(bucks)
-{
-    playerMoney.addCurrency(bucks)
-}
-
 //list of items in the shop
 var shopObj = [
     {
@@ -29,16 +6,23 @@ var shopObj = [
         itemName : 'Top Hat'
     },      
     {
-        shopType : "Consumables",
         itemCost : setCurrencyCookie(10),
         itemName : 'milk'
     },
     {
-        shopType : "Consumables",
         itemCost : setCurrencyCookie(5),
         itemName : 'cat feed'
     }
-]       
+] 
+
+//the function to buy stuff from the Prawn Shop
+function shopping(n)
+{
+    let item = shopObj[n];
+    let bought = item.subtractCurrency(item.itemCost);
+    return getCurrencyCookie();
+}
+
 
 for (i =0 ; i < shopObj.length; i++)
 for (property in shopObj[i]) 
